@@ -1,0 +1,4103 @@
+{
+	"info": {
+		"_postman_id": "de78582b-95f9-4821-b348-4e5839675304",
+		"name": "EVE-NG API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "20700882-de78582b-95f9-4821-b348-4e5839675304"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 OK : Successfully Authenticated\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "3d837cbe-4cbf-4162-a901-dbf02f19fbdd"
+							}
+						}
+					],
+					"id": "84ebf495-478d-4920-a22e-2b563bb1d5f4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\",\"password\":\"eve\"}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f98e50d2-fd7d-41f7-a5c5-99f0a4efa67d",
+							"name": "Authenticate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\":\"admin\",\"password\":\"eve\"}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:26:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "unetlab_session=024cc7f5-8ef6-4081-a55f-e057f37c0cb8; domain=10.133.210.187; path=/api/; expires=Sat, 26-Feb-3600 22:26:14 UTC"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"User logged in (90013).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Info",
+					"id": "1260719c-445e-4b85-95ac-8a8421b056ba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/auth",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b670955a-f1e3-4006-a560-41c150733a19",
+							"name": "User Info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/auth",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:37:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"User has been loaded (90002).\",\n    \"data\": {\n        \"email\": \"root@localhost\",\n        \"folder\": \"/MHafez/NRS2 Labs\",\n        \"lab\": \"/MHafez/DIl.unl\",\n        \"lang\": \"en\",\n        \"name\": \"Eve-NG Administrator\",\n        \"role\": \"admin\",\n        \"tenant\": \"0\",\n        \"html5\": \"1\",\n        \"username\": \"admin\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"id": "9354c313-c97b-4cfc-a76a-32260678b80d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b65f750f-78ce-407c-b97c-7f9384b7e254",
+							"name": "Logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/auth/logout",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:38:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "unetlab_session=; path=/; expires=Sat, 25-Feb-2023 23:38:19 UTC"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"User logged out (90019).\"\n}"
+						}
+					]
+				}
+			],
+			"id": "131738c8-e2ef-4bab-be24-50cc2f3c294a"
+		},
+		{
+			"name": "System status",
+			"item": [
+				{
+					"name": "Get system statistics",
+					"id": "564c9365-c7f7-4f83-92cc-21e80649ebf9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/status",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "41d12dfb-88a8-4e80-8de6-900a1803d54c",
+							"name": "Get system statistics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/status",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:40:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Fetched system status (60001).\",\n    \"data\": {\n        \"version\": \"2.0.3-110\",\n        \"qemu_version\": \"2.4.0\",\n        \"uksm\": \"unsupported\",\n        \"ksm\": \"enabled\",\n        \"cpulimit\": \"enabled\",\n        \"cpu\": 21,\n        \"disk\": 23,\n        \"cached\": 83,\n        \"mem\": 22,\n        \"swap\": 0,\n        \"iol\": 0,\n        \"dynamips\": 0,\n        \"qemu\": 97,\n        \"docker\": 0,\n        \"vpcs\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Device Templates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 OK : Response OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response contains 'Successfully listed node templates'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Successfully listed node templates\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "23d1477b-91c0-42d6-a1b3-b514d598ba07"
+							}
+						}
+					],
+					"id": "60a1f853-55ab-4ed7-b010-86e417a5c4e7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/list/templates/",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"list",
+								"templates",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "97bf5b9e-3a47-46f9-bb0d-9ae6eccc8e7f",
+							"name": "List Device Templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/list/templates/",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"list",
+										"templates",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:44:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3652"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed node templates (60003).\",\n    \"data\": {\n        \"a10\": \"A10 vThunder.hided\",\n        \"osx\": \"Apple OSX.hided\",\n        \"veos\": \"Arista vEOS.hided\",\n        \"clearpass\": \"Aruba ClearPass.hided\",\n        \"arubacx\": \"Aruba OS-CX Virtual Switch.hided\",\n        \"aruba\": \"Aruba WiFi Controller.hided\",\n        \"barracuda\": \"Barraccuda NGIPS.hided\",\n        \"brocadevadx\": \"Brocade vADX.hided\",\n        \"cpsg\": \"CheckPoint Security Gateway VE.hided\",\n        \"acs\": \"Cisco ACS.hided\",\n        \"ampcloud\": \"Cisco AMP Cloud.hided\",\n        \"apicem\": \"Cisco Application Policy Infrastructure.hided\",\n        \"asa\": \"Cisco ASA.hided\",\n        \"asav\": \"Cisco ASAv.hided\",\n        \"c9800cl\": \"Cisco C9800-CL WLC.hided\",\n        \"cda\": \"Cisco Context Directory Agent.hided\",\n        \"csr1000v\": \"Cisco CSR 1000V (XE 3.x).hided\",\n        \"csr1000vng\": \"Cisco CSR 1000V (XE 16.x).hided\",\n        \"cucm\": \"Cisco CUCM.hided\",\n        \"dcnm\": \"Cisco Data Center Network Manager.hided\",\n        \"phoebe\": \"Cisco Email Security Appliance (ESA).hided\",\n        \"cexpresw\": \"Cisco Expressway.hided\",\n        \"firepower\": \"Cisco FirePower.hided\",\n        \"firepower6\": \"Cisco FirePower 6.hided\",\n        \"iol\": \"Cisco IOL.hided\",\n        \"c1710\": \"Cisco IOS 1710 (Dynamips)\",\n        \"c3725\": \"Cisco IOS 3725 (Dynamips)\",\n        \"c7200\": \"Cisco IOS 7206VXR (Dynamips)\",\n        \"cips\": \"Cisco IPS.hided\",\n        \"ise\": \"Cisco ISE\",\n        \"cms\": \"Cisco Meeting Server.hided\",\n        \"titanium\": \"Cisco NX-OSv (Titanium).hided\",\n        \"nxosv9k\": \"Cisco NX-OSv 9K.hided\",\n        \"prime\": \"Cisco Prime Infra.hided\",\n        \"stealth\": \"Cisco StealthWatch.hided\",\n        \"uccx\": \"Cisco UCCX.hided\",\n        \"cup\": \"Cisco UCM IM & Presence.hided\",\n        \"ucspe\": \"Cisco UCS-PE.hided\",\n        \"cue\": \"Cisco Unity Express.hided\",\n        \"vios\": \"Cisco vIOS Router.hided\",\n        \"viosl2\": \"Cisco vIOS Switch.hided\",\n        \"vnam\": \"Cisco vNAM.hided\",\n        \"vwaas\": \"Cisco vWAAS.hided\",\n        \"vwlc\": \"Cisco vWLC.hided\",\n        \"coeus\": \"Cisco Web Security Appliance (WSA).hided\",\n        \"xrv\": \"Cisco XRv\",\n        \"xrv9k\": \"Cisco XRv 9000\",\n        \"nsvpx\": \"Citrix Netscaler.hided\",\n        \"ctxsdw\": \"Citrix SD-WAN.hided\",\n        \"cumulus\": \"Cumulus VX.hided\",\n        \"cyberoam\": \"Cyberoam FW.hided\",\n        \"extremexos\": \"ExtremeXOS.hided\",\n        \"bigip\": \"F5 BIG-IP LTM VE.hided\",\n        \"fortinet\": \"Fortinet FortiGate\",\n        \"free\": \"FreeDiameter\",\n        \"hpvsr\": \"HP VSR1000.hided\",\n        \"huaweiar1k\": \"Huawei AR1000v.hided\",\n        \"huaweiusg6kv\": \"Huawei USG6000v.hided\",\n        \"infoblox\": \"Infoblox IPAM.hided\",\n        \"olive\": \"Juniper Olive.hided\",\n        \"junipervrr\": \"Juniper RR.hided\",\n        \"vmx\": \"Juniper vMX.hided\",\n        \"vmxvcp\": \"Juniper vMX VCP.hided\",\n        \"vmxvfp\": \"Juniper vMX VFP.hided\",\n        \"vqfxpfe\": \"Juniper vQFX PFE.hided\",\n        \"vqfxre\": \"Juniper vQFX RE.hided\",\n        \"vsrx\": \"Juniper vSRX.hided\",\n        \"vsrxng\": \"Juniper vSRX NextGen.hided\",\n        \"jspace\": \"Junos Space.hided\",\n        \"kerio\": \"Kerio Control FW.hided\",\n        \"linux\": \"Linux\",\n        \"mikrotik\": \"MikroTik RouterOS.hided\",\n        \"newimage\": \"New Image.hided\",\n        \"sar\": \"Nokia 7705 SAR\",\n        \"timoscpm\": \"Nokia 7750 CPM\",\n        \"timosiom\": \"Nokia 7750 IOM\",\n        \"timos\": \"Nokia 7750 VSR-I\",\n        \"ostinato\": \"Ostinato\",\n        \"paloalto\": \"Palo Alto.hided\",\n        \"pfsense\": \"pfSense Firewall\",\n        \"scrutinizer\": \"Pixia Scrutinizer.hided\",\n        \"pulse\": \"Pulse Secure.hided\",\n        \"alteon\": \"Radware AlteonVA.hided\",\n        \"riverbed\": \"Riverbed.hided\",\n        \"sterra\": \"S-Terra.hided\",\n        \"sats\": \"SATS\",\n        \"silveredge\": \"Silver Peak Unity Edge.hided\",\n        \"silverorch\": \"Silver Peak Unity Orchestrator.hided\",\n        \"sonicwall\": \"SonicWall FW.hided\",\n        \"sophosutm\": \"Sophos UTM.hided\",\n        \"sophosxg\": \"Sophos XG.hided\",\n        \"trendmivtps\": \"Trend Micro vTPS.hided\",\n        \"veloedge\": \"Velocloud Edge.hided\",\n        \"velogw\": \"Velocloud Gateway.hided\",\n        \"veloorch\": \"Velocloud Orchestrator.hided\",\n        \"versaana\": \"Versa Analytics.hided\",\n        \"versadir\": \"Versa Director.hided\",\n        \"versafvnf\": \"Versa FlexVNF.hided\",\n        \"vtbond\": \"Viptela vBond.hided\",\n        \"vtedge\": \"Viptela vEdge.hided\",\n        \"vtmgmt\": \"Viptela vManage.hided\",\n        \"vtsmart\": \"Viptela vSmart.hided\",\n        \"vpcs\": \"Virtual PC (VPCS)\",\n        \"esxi\": \"VMWare ESXi.hided\",\n        \"nsx\": \"VMWare NSX.hided\",\n        \"vcenter\": \"VMWare vCenter.hided\",\n        \"vstc\": \"vSTC\",\n        \"vyos\": \"VyOS.hided\",\n        \"win\": \"Windows\",\n        \"winserver\": \"Windows Server.hided\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a single template",
+					"id": "f4d02329-b82c-41ef-9511-092661711b23",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/list/templates/timos",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"list",
+								"templates",
+								"timos"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "4ba4b07c-4ea0-4030-b3dd-f5b8696013f7",
+							"name": "Get a single template",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/list/templates/timos",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"list",
+										"templates",
+										"timos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:44:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6002"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed node template (60032).\",\n    \"data\": {\n        \"options\": {\n            \"image\": {\n                \"name\": \"Image\",\n                \"type\": \"list\",\n                \"list\": {\n                    \"timos-12.0.R25\": \"timos-12.0.R25\",\n                    \"timos-13.0.R20\": \"timos-13.0.R20\",\n                    \"timos-14.0.R14\": \"timos-14.0.R14\",\n                    \"timos-14.0.R4\": \"timos-14.0.R4\",\n                    \"timos-15.0.R16\": \"timos-15.0.R16\",\n                    \"timos-15.0.R3\": \"timos-15.0.R3\",\n                    \"timos-16.0.R7\": \"timos-16.0.R7\",\n                    \"timos-19.0.R1\": \"timos-19.0.R1\",\n                    \"timos-19.10.R9\": \"timos-19.10.R9\",\n                    \"timos-19.10R5\": \"timos-19.10R5\",\n                    \"timos-20.10.R4\": \"timos-20.10.R4\",\n                    \"timos-20.2R2\": \"timos-20.2R2\",\n                    \"timos-20.5.R2\": \"timos-20.5.R2\",\n                    \"timos-21.10.R2\": \"timos-21.10.R2\",\n                    \"timos-22.10.R1\": \"timos-22.10.R1\",\n                    \"timos-22.10.R2\": \"timos-22.10.R2\",\n                    \"timos-SAS-mxp\": \"timos-SAS-mxp\",\n                    \"timos-SAS-s64\": \"timos-SAS-s64\"\n                },\n                \"value\": \"timos-SAS-s64\"\n            },\n            \"name\": {\n                \"name\": \"Name/prefix\",\n                \"type\": \"input\",\n                \"value\": \"VSR-I\"\n            },\n            \"icon\": {\n                \"name\": \"Icon\",\n                \"type\": \"list\",\n                \"value\": \"SROS.png\",\n                \"list\": {\n                    \"AMPServer.png\": \"AMPServer.png\",\n                    \"ASA.png\": \"ASA.png\",\n                    \"ASA2.png\": \"ASA2.png\",\n                    \"Access_point.png\": \"Access_point.png\",\n                    \"Apic.png\": \"Apic.png\",\n                    \"AristaSW.png\": \"AristaSW.png\",\n                    \"Aruba_ctrl.png\": \"Aruba_ctrl.png\",\n                    \"CSRv1000.png\": \"CSRv1000.png\",\n                    \"CUCM.png\": \"CUCM.png\",\n                    \"CUCM1.png\": \"CUCM1.png\",\n                    \"Checkpoint.png\": \"Checkpoint.png\",\n                    \"Cisco ACS.png\": \"Cisco ACS.png\",\n                    \"Cisco WAAS.png\": \"Cisco WAAS.png\",\n                    \"Cloud.png\": \"Cloud.png\",\n                    \"Cube.png\": \"Cube.png\",\n                    \"CustomShape.png\": \"CustomShape.png\",\n                    \"Desktop.png\": \"Desktop.png\",\n                    \"Desktop2.png\": \"Desktop2.png\",\n                    \"Desktop3.png\": \"Desktop3.png\",\n                    \"Desktop4.png\": \"Desktop4.png\",\n                    \"Desktop_Win.png\": \"Desktop_Win.png\",\n                    \"Desktop_linux.png\": \"Desktop_linux.png\",\n                    \"ESA.png\": \"ESA.png\",\n                    \"ESXi.png\": \"ESXi.png\",\n                    \"Expressway-c.png\": \"Expressway-c.png\",\n                    \"Expressway-e.png\": \"Expressway-e.png\",\n                    \"F5.png\": \"F5.png\",\n                    \"F5_LB.png\": \"F5_LB.png\",\n                    \"FMC.png\": \"FMC.png\",\n                    \"Firewall.png\": \"Firewall.png\",\n                    \"Firewall2.png\": \"Firewall2.png\",\n                    \"Firewall3.png\": \"Firewall3.png\",\n                    \"Forti_FGT.png\": \"Forti_FGT.png\",\n                    \"Forti_Server.png\": \"Forti_Server.png\",\n                    \"Frame Relay.png\": \"Frame Relay.png\",\n                    \"HUB.png\": \"HUB.png\",\n                    \"IMpresence.png\": \"IMpresence.png\",\n                    \"IPS.png\": \"IPS.png\",\n                    \"IPphone.png\": \"IPphone.png\",\n                    \"ISE.png\": \"ISE.png\",\n                    \"ISE1.png\": \"ISE1.png\",\n                    \"Infoblox.png\": \"Infoblox.png\",\n                    \"JuniperMX.png\": \"JuniperMX.png\",\n                    \"JuniperSRX.png\": \"JuniperSRX.png\",\n                    \"JunipervQFXpfe.png\": \"JunipervQFXpfe.png\",\n                    \"JunipervQFXre.png\": \"JunipervQFXre.png\",\n                    \"JunosSpace.png\": \"JunosSpace.png\",\n                    \"Laptop.png\": \"Laptop.png\",\n                    \"Linux.png\": \"Linux.png\",\n                    \"Load Balancer.png\": \"Load Balancer.png\",\n                    \"MAC_PC.png\": \"MAC_PC.png\",\n                    \"MPLS.png\": \"MPLS.png\",\n                    \"Meet-server.png\": \"Meet-server.png\",\n                    \"NSX.png\": \"NSX.png\",\n                    \"Network Analyzer.png\": \"Network Analyzer.png\",\n                    \"Nexus7K.png\": \"Nexus7K.png\",\n                    \"Nexus7K2.png\": \"Nexus7K2.png\",\n                    \"NexusK5.png\": \"NexusK5.png\",\n                    \"PaloAlto.png\": \"PaloAlto.png\",\n                    \"PaloPanorama.png\": \"PaloPanorama.png\",\n                    \"Prime.png\": \"Prime.png\",\n                    \"Pulse.png\": \"Pulse.png\",\n                    \"Router.png\": \"Router.png\",\n                    \"Router2.png\": \"Router2.png\",\n                    \"Router_FW.png\": \"Router_FW.png\",\n                    \"SROS linecard.png\": \"SROS linecard.png\",\n                    \"SROS.png\": \"SROS.png\",\n                    \"Sats_logo.png\": \"Sats_logo.png\",\n                    \"Server.png\": \"Server.png\",\n                    \"Server_AD.png\": \"Server_AD.png\",\n                    \"Server_Linux.png\": \"Server_Linux.png\",\n                    \"Server_WEB.png\": \"Server_WEB.png\",\n                    \"Server_WEB1.png\": \"Server_WEB1.png\",\n                    \"Server_Win.png\": \"Server_Win.png\",\n                    \"Server_db.png\": \"Server_db.png\",\n                    \"Server_file.png\": \"Server_file.png\",\n                    \"Server_mail.png\": \"Server_mail.png\",\n                    \"Server_storage.png\": \"Server_storage.png\",\n                    \"Sonicwall_FW.png\": \"Sonicwall_FW.png\",\n                    \"Sophos_fw.png\": \"Sophos_fw.png\",\n                    \"Switch L3.png\": \"Switch L3.png\",\n                    \"Switch L32.png\": \"Switch L32.png\",\n                    \"Switch.png\": \"Switch.png\",\n                    \"Switch2.png\": \"Switch2.png\",\n                    \"Unity_express.png\": \"Unity_express.png\",\n                    \"User_icon.png\": \"User_icon.png\",\n                    \"WAN Optimizer.png\": \"WAN Optimizer.png\",\n                    \"WSA.png\": \"WSA.png\",\n                    \"Winserver.png\": \"Winserver.png\",\n                    \"XR.png\": \"XR.png\",\n                    \"cEdge.png\": \"cEdge.png\",\n                    \"dcnm.png\": \"dcnm.png\",\n                    \"ixia.png\": \"ixia.png\",\n                    \"sp_edge.png\": \"sp_edge.png\",\n                    \"sp_orch.png\": \"sp_orch.png\",\n                    \"stealthfc.png\": \"stealthfc.png\",\n                    \"stealthfr.png\": \"stealthfr.png\",\n                    \"stealthfs.png\": \"stealthfs.png\",\n                    \"stealthmc.png\": \"stealthmc.png\",\n                    \"uccx.png\": \"uccx.png\",\n                    \"vBond.png\": \"vBond.png\",\n                    \"vEdge.png\": \"vEdge.png\",\n                    \"vManage.png\": \"vManage.png\",\n                    \"vSmart.png\": \"vSmart.png\",\n                    \"vWLC.png\": \"vWLC.png\",\n                    \"vanalytic.png\": \"vanalytic.png\",\n                    \"vdirector.png\": \"vdirector.png\",\n                    \"veloedge.png\": \"veloedge.png\",\n                    \"velogw.png\": \"velogw.png\",\n                    \"veloorch.png\": \"veloorch.png\",\n                    \"versaflex.png\": \"versaflex.png\"\n                }\n            },\n            \"uuid\": {\n                \"name\": \"UUID\",\n                \"type\": \"input\",\n                \"value\": \"\"\n            },\n            \"cpulimit\": {\n                \"name\": \"CPU Limit\",\n                \"type\": \"checkbox\",\n                \"value\": 1\n            },\n            \"cpu\": {\n                \"name\": \"CPU\",\n                \"type\": \"input\",\n                \"value\": 1\n            },\n            \"ram\": {\n                \"name\": \"RAM\",\n                \"type\": \"input\",\n                \"value\": 2048\n            },\n            \"ethernet\": {\n                \"name\": \"Ethernets\",\n                \"type\": \"input\",\n                \"value\": 6\n            },\n            \"management_address\": {\n                \"name\": \"Management Address\",\n                \"type\": \"input\",\n                \"value\": \"192.168.3.xxx/24\"\n            },\n            \"timos_line\": {\n                \"name\": \"Timos Line\",\n                \"type\": \"input\",\n                \"value\": \"chassis=SR-1s slot=A card=xcm-1s mda/1=s18-100gb-qsfp28\"\n            },\n            \"timos_license\": {\n                \"name\": \"Timos License Path\",\n                \"type\": \"input\",\n                \"value\": \"ftp://license:license@192.168.3.9/timos.All-release.txt\"\n            },\n            \"qemu_version\": {\n                \"name\": \"QEMU Version\",\n                \"type\": \"list\",\n                \"value\": \"4.1.0\",\n                \"list\": {\n                    \"1.3.1\": \"1.3.1\",\n                    \"2.0.2\": \"2.0.2\",\n                    \"2.2.0\": \"2.2.0\",\n                    \"2.4.0\": \"2.4.0\",\n                    \"2.5.0\": \"2.5.0\",\n                    \"2.6.2\": \"2.6.2\",\n                    \"2.12.0\": \"2.12.0\",\n                    \"3.1.0\": \"3.1.0\",\n                    \"4.1.0\": \"4.1.0\",\n                    \"\": \"tpl(4.1.0)\"\n                }\n            },\n            \"qemu_arch\": {\n                \"name\": \"QEMU Arch\",\n                \"type\": \"list\",\n                \"value\": \"x86_64\",\n                \"list\": {\n                    \"i386\": \"i386\",\n                    \"x86_64\": \"x86_64\",\n                    \"\": \"tpl(x86_64)\"\n                }\n            },\n            \"qemu_nic\": {\n                \"name\": \"QEMU Nic\",\n                \"type\": \"list\",\n                \"value\": \"e10000\",\n                \"list\": {\n                    \"virtio-net-pci\": \"virtio-net-pci\",\n                    \"e1000\": \"e1000\",\n                    \"e1000-82545em\": \"e1000-82545em\",\n                    \"vmxnet3\": \"vmxnet3\",\n                    \"\": \"tpl(e10000)\"\n                }\n            },\n            \"qemu_options\": {\n                \"name\": \"QEMU custom options\",\n                \"type\": \"input\",\n                \"value\": \"-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc\"\n            },\n            \"config\": {\n                \"name\": \"Startup configuration\",\n                \"type\": \"list\",\n                \"value\": \"0\",\n                \"list\": [\n                    \"None\",\n                    \"Exported\"\n                ]\n            },\n            \"delay\": {\n                \"name\": \"Delay (s)\",\n                \"type\": \"input\",\n                \"value\": 0\n            },\n            \"console\": {\n                \"name\": \"Console\",\n                \"type\": \"list\",\n                \"value\": \"telnet\",\n                \"list\": {\n                    \"telnet\": \"telnet\",\n                    \"vnc\": \"vnc\",\n                    \"rdp\": \"rdp\"\n                }\n            }\n        },\n        \"description\": \"Nokia 7750 VSR-I\",\n        \"type\": \"qemu\",\n        \"qemu\": {\n            \"arch\": \"x86_64\",\n            \"version\": \"4.1.0\",\n            \"nic\": \"e10000\",\n            \"options\": \"-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List network types",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 OK : Retrieved User List\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response contains 'data'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"data\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "3ed40dbb-f9fa-4546-a622-85b6343b8a4e"
+							}
+						}
+					],
+					"id": "5a871bf8-daa2-43a9-84b4-7e7daaf3c434",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/list/networks",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"list",
+								"networks"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "4f761fa3-f34f-42a1-b7db-6a4ab15a9450",
+							"name": "List network types",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/list/networks",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"list",
+										"networks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:45:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed network types (60002).\",\n    \"data\": {\n        \"bridge\": \"bridge\",\n        \"ovs\": \"ovs\",\n        \"pnet0\": \"pnet0\",\n        \"pnet1\": \"pnet1\",\n        \"pnet2\": \"pnet2\",\n        \"pnet3\": \"pnet3\",\n        \"pnet4\": \"pnet4\",\n        \"pnet5\": \"pnet5\",\n        \"pnet6\": \"pnet6\",\n        \"pnet7\": \"pnet7\",\n        \"pnet8\": \"pnet8\",\n        \"pnet9\": \"pnet9\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "ac5a98d4-5967-44f1-9dfa-e9da391f2e95"
+		},
+		{
+			"name": "Managing users",
+			"item": [
+				{
+					"name": "List user roles",
+					"id": "77e9292b-f518-406c-85dc-7c4ac568fb57",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/list/roles",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"list",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "3e36fdf7-742d-4c00-a8bc-b0241b097d5b",
+							"name": "List user roles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/list/roles",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"list",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:46:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed user roles (60041).\",\n    \"data\": {\n        \"admin\": \"Administrator\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a single user",
+					"id": "53d28c40-f530-40b7-8402-234314c67042",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/users/MHafez",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"MHafez"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "757b1620-1acb-4b7d-ba11-a49b698daa95",
+							"name": "Get a single user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/users/MHafez",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"MHafez"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:54:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed users (60040).\",\n    \"data\": {\n        \"username\": \"Mhafez\",\n        \"email\": \"mohamed.abd-elhafez@nokia.com\",\n        \"expiration\": \"-1\",\n        \"name\": \"Mohamed Hafez\",\n        \"session\": \"1677459111\",\n        \"role\": \"admin\",\n        \"ip\": \"135.244.198.107\",\n        \"pod\": \"5\",\n        \"pexpiration\": \"-1\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 OK : Retrieved User List\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response containsat least one user\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"username\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "1dc904ca-058a-4d82-b39c-ed0b0d13f27d"
+							}
+						}
+					],
+					"id": "b001d9a7-1bc4-4c0c-b9da-244904784992",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/users/",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c217ff6e-6ff9-422a-b89b-96a8c9a36d9c",
+							"name": "List Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/users/",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:35:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6898"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed users (60040).\",\n    \"data\": {\n        \"admin\": {\n            \"username\": \"admin\",\n            \"email\": \"root@localhost\",\n            \"expiration\": \"-1\",\n            \"name\": \"Eve-NG Administrator\",\n            \"session\": \"1677454514\",\n            \"role\": \"admin\",\n            \"ip\": \"135.244.198.107\",\n            \"folder\": \"/MHafez/NRS2 Labs\",\n            \"lab\": \"/Amr Azab/BGP-VPLS/BGP-VPLS Lab_1.unl\",\n            \"pod\": \"0\",\n            \"pexpiration\": \"-1\"\n        },\n        \"agomaa\": {\n            \"username\": \"agomaa\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1646927083\",\n            \"role\": \"admin\",\n            \"ip\": \"10.144.184.190\",\n            \"folder\": \"/New_comers/Ahmed Magdy/NRS2 Labs\",\n            \"lab\": \"/New_comers/Ahmed Magdy/NRS2 Labs/NRS2_Basic_Topology.unl\",\n            \"pod\": \"6\",\n            \"pexpiration\": \"-1\"\n        },\n        \"Ahmed Magdy\": {\n            \"username\": \"Ahmed Magdy\",\n            \"email\": \"ahmed.magdy.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"ahmed magdy\",\n            \"session\": \"1676649108\",\n            \"role\": \"admin\",\n            \"ip\": \"10.206.70.29\",\n            \"folder\": \"/New_comers/Ahmed Magdy/Airtel\",\n            \"lab\": \"/New_comers/Ahmed Magdy/Airtel/Core.unl\",\n            \"pod\": \"10\",\n            \"pexpiration\": \"-1\"\n        },\n        \"amrmoham\": {\n            \"username\": \"amrmoham\",\n            \"email\": \"amr.mohamed_mahmoud@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"amr.mohamed_mahmoud\",\n            \"session\": \"1670600053\",\n            \"role\": \"admin\",\n            \"ip\": \"10.154.76.85\",\n            \"folder\": \"/New_comers/Amr Mamdouh\",\n            \"lab\": \"/New_comers/Amr Mamdouh/TEST.unl\",\n            \"pod\": \"16\",\n            \"pexpiration\": \"-1\"\n        },\n        \"asyousse\": {\n            \"username\": \"asyousse\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"asyousse\",\n            \"session\": \"1675690459\",\n            \"role\": \"admin\",\n            \"ip\": \"135.120.248.118\",\n            \"folder\": \"/New_comers/Youssef Ashraf\",\n            \"lab\": \"/New_comers/Youssef Ashraf/NRSII_Services_1655455158507_1665481946138_1665482037957_1665487537897.unl\",\n            \"pod\": \"14\",\n            \"pexpiration\": \"-1\"\n        },\n        \"awagdy\": {\n            \"username\": \"awagdy\",\n            \"email\": \"ahmed.mohamad_wagdy.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Ahmed Wagdy\",\n            \"session\": null,\n            \"role\": \"admin\",\n            \"ip\": null,\n            \"folder\": null,\n            \"lab\": null,\n            \"pod\": \"8\",\n            \"pexpiration\": \"-1\"\n        },\n        \"eelgohar\": {\n            \"username\": \"eelgohar\",\n            \"email\": \"eman.el-gohary.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Eman El Gohary\",\n            \"session\": \"1677418180\",\n            \"role\": \"admin\",\n            \"ip\": \"135.120.249.5\",\n            \"folder\": \"/Eman Elgohary\",\n            \"lab\": \"/Eman Elgohary/Eman1.unl\",\n            \"pod\": \"26\",\n            \"pexpiration\": \"-1\"\n        },\n        \"Elham\": {\n            \"username\": \"Elham\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1677451064\",\n            \"role\": \"admin\",\n            \"ip\": \"10.144.204.218\",\n            \"folder\": \"/Elham\",\n            \"lab\": \"/Elham/test.unl\",\n            \"pod\": \"23\",\n            \"pexpiration\": \"-1\"\n        },\n        \"fatmah\": {\n            \"username\": \"fatmah\",\n            \"email\": \"fatmah.elfaramawy.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"fatmah\",\n            \"session\": \"1676380764\",\n            \"role\": \"admin\",\n            \"ip\": \"135.120.249.87\",\n            \"folder\": \"/New_comers\",\n            \"lab\": null,\n            \"pod\": \"3\",\n            \"pexpiration\": \"-1\"\n        },\n        \"hatem\": {\n            \"username\": \"hatem\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"hatem\",\n            \"session\": \"1666698576\",\n            \"role\": \"admin\",\n            \"ip\": \"10.205.115.4\",\n            \"folder\": \"/New_comers/Hatem\",\n            \"lab\": \"/New_comers/Hatem/NRSII_Services_1655455158507_1665481946138.unl\",\n            \"pod\": \"15\",\n            \"pexpiration\": \"-1\"\n        },\n        \"HeshamH\": {\n            \"username\": \"HeshamH\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": null,\n            \"role\": \"admin\",\n            \"ip\": \"10.144.185.91\",\n            \"folder\": \"/Hesham\",\n            \"lab\": null,\n            \"pod\": \"12\",\n            \"pexpiration\": \"-1\"\n        },\n        \"hhanafy\": {\n            \"username\": \"hhanafy\",\n            \"email\": \"hesham.hanafy@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Hesham HANAFY\",\n            \"session\": \"1676999002\",\n            \"role\": \"admin\",\n            \"ip\": \"10.155.77.194\",\n            \"folder\": \"/Hesham\",\n            \"lab\": \"/Hesham/OMO_LAB.unl\",\n            \"pod\": \"18\",\n            \"pexpiration\": \"-1\"\n        },\n        \"hhassan\": {\n            \"username\": \"hhassan\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1655918425\",\n            \"role\": \"admin\",\n            \"ip\": \"10.156.202.45\",\n            \"folder\": \"/VMO2\",\n            \"lab\": \"/VMO2/VMO2.unl\",\n            \"pod\": \"11\",\n            \"pexpiration\": \"-1\"\n        },\n        \"hmakhoukh\": {\n            \"username\": \"hmakhoukh\",\n            \"email\": \"hicham.makhoukh@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Hicham\",\n            \"session\": \"1677363220\",\n            \"role\": \"admin\",\n            \"ip\": \"10.144.202.135\",\n            \"folder\": \"/\",\n            \"lab\": \"/mbalbal.unl\",\n            \"pod\": \"17\",\n            \"pexpiration\": \"-1\"\n        },\n        \"ismohamm\": {\n            \"username\": \"ismohamm\",\n            \"email\": \"islam_mohammed.thabet@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Islam Mohammed Thabet\",\n            \"session\": null,\n            \"role\": \"admin\",\n            \"ip\": \"135.120.248.119\",\n            \"folder\": \"/\",\n            \"lab\": null,\n            \"pod\": \"25\",\n            \"pexpiration\": \"-1\"\n        },\n        \"kormed\": {\n            \"username\": \"kormed\",\n            \"email\": \"omar.kormed.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Omar kormed\",\n            \"session\": \"1662564275\",\n            \"role\": \"admin\",\n            \"ip\": \"10.150.27.218\",\n            \"folder\": \"/New_comers/Kormed/NRS2 Labs\",\n            \"lab\": \"/New_comers/Kormed/NRS2 Labs/SR2S_Test.unl\",\n            \"pod\": \"4\",\n            \"pexpiration\": \"-1\"\n        },\n        \"madel\": {\n            \"username\": \"madel\",\n            \"email\": \"mohamed.adel_mohamed_shaaban@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Mohamed Adel\",\n            \"session\": null,\n            \"role\": \"admin\",\n            \"ip\": null,\n            \"folder\": null,\n            \"lab\": null,\n            \"pod\": \"21\",\n            \"pexpiration\": \"-1\"\n        },\n        \"mahmoud\": {\n            \"username\": \"mahmoud\",\n            \"email\": \"mahmoud.abd_el-mohsen.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"mahmoud mohsen\",\n            \"session\": null,\n            \"role\": \"admin\",\n            \"ip\": null,\n            \"folder\": null,\n            \"lab\": null,\n            \"pod\": \"7\",\n            \"pexpiration\": \"-1\"\n        },\n        \"mansour\": {\n            \"username\": \"mansour\",\n            \"email\": \"mohamed.mansour@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Mohamed Mansour\",\n            \"session\": \"1654472638\",\n            \"role\": \"admin\",\n            \"ip\": \"10.144.206.229\",\n            \"folder\": \"/Mansour\",\n            \"lab\": \"/Mansour/Cote DIvoire_MTN Super Bollo.unl\",\n            \"pod\": \"9\",\n            \"pexpiration\": \"-1\"\n        },\n        \"mariam\": {\n            \"username\": \"mariam\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1677418844\",\n            \"role\": \"admin\",\n            \"ip\": \"10.150.45.232\",\n            \"folder\": \"/Elham\",\n            \"lab\": null,\n            \"pod\": \"24\",\n            \"pexpiration\": \"-1\"\n        },\n        \"mbalbal\": {\n            \"username\": \"mbalbal\",\n            \"email\": \"mehdi.balbal.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Mehdi Balbal\",\n            \"session\": \"1676986568\",\n            \"role\": \"admin\",\n            \"ip\": \"10.155.77.30\",\n            \"folder\": \"/BALBAL Mehdi\",\n            \"lab\": \"/BALBAL Mehdi/Test.unl\",\n            \"pod\": \"19\",\n            \"pexpiration\": \"-1\"\n        },\n        \"Mhafez\": {\n            \"username\": \"Mhafez\",\n            \"email\": \"mohamed.abd-elhafez@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Mohamed Hafez\",\n            \"session\": \"1677454374\",\n            \"role\": \"admin\",\n            \"ip\": \"135.244.198.107\",\n            \"folder\": \"/MHafez\",\n            \"lab\": null,\n            \"pod\": \"5\",\n            \"pexpiration\": \"-1\"\n        },\n        \"moataz\": {\n            \"username\": \"moataz\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1677449978\",\n            \"role\": \"admin\",\n            \"ip\": \"10.139.48.210\",\n            \"folder\": \"/Moataz Shawky\",\n            \"lab\": \"/Moataz Shawky/EPS.unl\",\n            \"pod\": \"1\",\n            \"pexpiration\": \"-1\"\n        },\n        \"mohamedesmail\": {\n            \"username\": \"mohamedesmail\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1677351545\",\n            \"role\": \"admin\",\n            \"ip\": \"10.206.68.229\",\n            \"folder\": \"/Hazem Ibrahim\",\n            \"lab\": null,\n            \"pod\": \"22\",\n            \"pexpiration\": \"-1\"\n        },\n        \"selim\": {\n            \"username\": \"selim\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1655988787\",\n            \"role\": \"admin\",\n            \"ip\": \"10.150.67.95\",\n            \"folder\": \"/New_comers/Selim\",\n            \"lab\": null,\n            \"pod\": \"2\",\n            \"pexpiration\": \"-1\"\n        },\n        \"shamy\": {\n            \"username\": \"shamy\",\n            \"email\": \"\",\n            \"expiration\": \"-1\",\n            \"name\": \"\",\n            \"session\": \"1671025448\",\n            \"role\": \"admin\",\n            \"ip\": \"135.244.41.194\",\n            \"folder\": \"/shamy\",\n            \"lab\": \"/shamy/shamy test.unl\",\n            \"pod\": \"20\",\n            \"pexpiration\": \"-1\"\n        },\n        \"testuser\": {\n            \"username\": \"testuser\",\n            \"email\": \"test@unetlab.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"TestUser\",\n            \"session\": null,\n            \"role\": \"admin\",\n            \"ip\": null,\n            \"folder\": null,\n            \"lab\": null,\n            \"pod\": -1,\n            \"pexpiration\": null\n        },\n        \"youssefh\": {\n            \"username\": \"youssefh\",\n            \"email\": \"hamdy.youssef.ext@nokia.com\",\n            \"expiration\": \"-1\",\n            \"name\": \"Youssef, Hamdy (EXT - EG/Cairo) <hamdy.youssef.ext@nokia.com>\",\n            \"session\": \"1675953960\",\n            \"role\": \"admin\",\n            \"ip\": \"135.120.250.253\",\n            \"folder\": \"/\",\n            \"lab\": \"/New_comers/Youssef Hamdy/NRSII_Services_1655455158507_1665481946138_1665482037957.unl\",\n            \"pod\": \"13\",\n            \"pexpiration\": \"-1\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add New User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"201 Success : Created User 'TestUser'\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "2d28d06a-3654-45e3-aa85-38424162c8bf"
+							}
+						}
+					],
+					"id": "abccecb3-0ac4-40f7-97eb-cc442cc8e0fc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"testuser\",\"name\":\"TestUser\",\"email\":\"test@unetlab.com\",\"password\":\"testpassword1\",\"role\":\"user\",\"expiration\":\"-1\",\"pod\":127,\"pexpiration\":\"1451520000\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/users",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "31b0afb4-34e6-4823-84c8-092dbb41a54b",
+							"name": "Add New User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\":\"testuser\",\"name\":\"TestUser\",\"email\":\"test@unetlab.com\",\"password\":\"testpassword1\",\"role\":\"user\",\"expiration\":\"-1\",\"pod\":127,\"pexpiration\":\"1451520000\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/users",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:38:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 500,\n    \"status\": \"fail\",\n    \"message\": \"Cannot create user, check if already exists (60045).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit an user",
+					"id": "6b2c0c14-7b29-474f-b244-99ea8ad11a71",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"New Test User\",\"email\":\"testuser@unetlab.com\",\"password\":\"newpassword\",\"role\":\"user\",\"expiration\":\"1451520000\",\"pod\":127,\"pexpiration\":\"-1\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/users/testuser",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"testuser"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f8123117-73a4-493e-9aed-7ab528ea81f5",
+							"name": "Edit an user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"New Test User\",\"email\":\"123@unetlab.com\",\"password\":\"newpassword\",\"role\":\"user\",\"expiration\":\"1451520000\",\"pod\":127,\"pexpiration\":\"-1\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/users/testuser",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"testuser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:39:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"User saved (60042).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete an user",
+					"id": "3db49a13-af28-4004-85de-06ed66fda022",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/users/testuser",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"testuser"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f2cba552-d760-465e-88d3-e7b3dd8bc3a2",
+							"name": "Delete an user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/users/testuser",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"testuser"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:40:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"User saved (60042).\"\n}"
+						}
+					]
+				}
+			],
+			"id": "af060291-d3b6-401d-b7fc-c492d254a105"
+		},
+		{
+			"name": "Folders",
+			"item": [
+				{
+					"name": "List content inside a folder",
+					"id": "3c34a594-fbf5-4fa8-aa52-ed3f67a86166",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/folders/MHafez",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"folders",
+								"MHafez"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "559ef415-5f34-4dcf-9676-b0a7c3d6b441",
+							"name": "List content inside a folder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/folders/MHafez",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"folders",
+										"MHafez"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:48:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "577"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed path (60007).\",\n    \"data\": {\n        \"folders\": [\n            {\n                \"name\": \"..\",\n                \"path\": \"/\"\n            },\n            {\n                \"name\": \"New Folder1\",\n                \"path\": \"/MHafez/New Folder1\"\n            },\n            {\n                \"name\": \"New Folder3\",\n                \"path\": \"/MHafez/New Folder3\"\n            },\n            {\n                \"name\": \"New Folder4\",\n                \"path\": \"/MHafez/New Folder4\"\n            },\n            {\n                \"name\": \"NRS2 Labs\",\n                \"path\": \"/MHafez/NRS2 Labs\"\n            },\n            {\n                \"name\": \"SATS\",\n                \"path\": \"/MHafez/SATS\"\n            }\n        ],\n        \"labs\": [\n            {\n                \"file\": \"DIl.unl\",\n                \"path\": \"/MHafez/DIl.unl\",\n                \"umtime\": 1676637314,\n                \"mtime\": \"17 Feb 2023  13:35\"\n            },\n            {\n                \"file\": \"test.unl\",\n                \"path\": \"/MHafez/test.unl\",\n                \"umtime\": 1661017456,\n                \"mtime\": \"20 Aug 2022  19:44\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add a new folder",
+					"id": "e2a5d1e7-b5c2-465c-936e-98cbab630510",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"path\":\"/MHafez\",\"name\":\"New Folder4\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/folders",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"folders"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a6a4ed64-6632-429f-b70e-f309a3265c3e",
+							"name": "Add a new folder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"path\":\"/MHafez\",\"name\":\"New Folder3\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/folders",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"folders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:27:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Folder has been created (60014).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Rename an existent folder",
+					"id": "e36a8d1a-0bc8-4aad-8b66-9f8ea641f1e3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"path\":\"/MHafez/APItestfolder\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/folders/MHafez/New Folder1",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"folders",
+								"MHafez",
+								"New Folder1"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "870415e0-a925-4b35-afc6-91cad58a7ef5",
+							"name": "Rename an existent folder",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"path\":\"/MHafez/APItestfolder\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/folders/MHafez/New Folder1",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"folders",
+										"MHafez",
+										"New Folder1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:51:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Folder moved (60049).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete an existing folder",
+					"id": "8ad7f09b-2cec-44a5-a4c1-603af891193a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/folders/MHafez/APItestfolder",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"folders",
+								"MHafez",
+								"APItestfolder"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f5eac4ae-6d38-4c9d-9bfd-3e670c38b9ed",
+							"name": "Delete an existing folder",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/folders/MHafez/testfolder",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"folders",
+										"MHafez",
+										"testfolder"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:34:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Folder has been deleted (60012).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Move an existing lab to a different folder",
+					"id": "83ce7a25-cb0f-4d1d-ba54-b13da74b0e27",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"path\":\"/MHafez\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/SATS/API lab test.unl/move",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"SATS",
+								"API lab test.unl",
+								"move"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6b2b1744-46c3-470a-8c3b-17b145503495",
+							"name": "Move an existing lab to a different folder",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"path\":\"/MHafez\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/SATS/API lab test.unl/move",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"SATS",
+										"API lab test.unl",
+										"move"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:20:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Lab moved (60035).\"\n}"
+						}
+					]
+				}
+			],
+			"id": "808d31e9-e65e-4333-9499-52eec850703e"
+		},
+		{
+			"name": "Managing labs",
+			"item": [
+				{
+					"name": "Get a lab",
+					"id": "9ddf2351-6934-497f-b47f-8312e3ba79c0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/SATS/test.unl",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"SATS",
+								"test.unl"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "82eb8d94-b21c-4da1-a6b5-e94a82e4a2b6",
+							"name": "Get a lab",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:42:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Lab has been loaded (60020).\",\n    \"data\": {\n        \"author\": \"\",\n        \"description\": \"\",\n        \"body\": \"\",\n        \"filename\": \"DIl.unl\",\n        \"id\": \"2a109ab0-6479-4bf2-821a-34acbedb0760\",\n        \"name\": \"DIl\",\n        \"version\": \"1\",\n        \"scripttimeout\": 300,\n        \"lock\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all remote endpoint",
+					"id": "7edb1192-4a29-4eb1-9d56-773f3c8e1cc0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/SATS/test.unl/links",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"SATS",
+								"test.unl",
+								"links"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d22a1c2c-c6b7-4951-9e95-cbada7889df2",
+							"name": "Get all remote endpoint",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/SATS/test.unl/links",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"SATS",
+										"test.unl",
+										"links"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:49:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "193"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ethernet\": {\n            \"1\": \"Net\",\n            \"2\": \"Net-Windows-10iface_1\",\n            \"3\": \"Net-7750SRiface_2\"\n        },\n        \"serial\": []\n    },\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Fetced all lab networks and serial endpoints (60024).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all nodes configured in a lab",
+					"id": "6bcda442-6434-4cd9-862e-ed19d0fe98db",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1ca3ce27-64de-47b9-9f18-861a62a24dc0",
+							"name": "Get one or all nodes configured in a lab",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:50:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3632"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed nodes (60026).\",\n    \"data\": {\n        \"1\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 1,\n            \"left\": 450,\n            \"icon\": \"XR.png\",\n            \"image\": \"xrv9k-7.5.2\",\n            \"name\": \"xrv9k\",\n            \"ram\": 16384,\n            \"status\": 2,\n            \"template\": \"xrv9k\",\n            \"type\": \"qemu\",\n            \"top\": 156,\n            \"url\": \"/html5/#/client/MzI3NjkAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 4,\n            \"ethernet\": 7,\n            \"uuid\": \"d67872b5-76fc-4200-831b-fe785e6f5af9\"\n        },\n        \"2\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 2,\n            \"left\": 944,\n            \"icon\": \"ISE.png\",\n            \"image\": \"ise-2.7.0.356.SPA\",\n            \"name\": \"ISE\",\n            \"ram\": 8192,\n            \"status\": 2,\n            \"template\": \"ise\",\n            \"type\": \"qemu\",\n            \"top\": 279,\n            \"url\": \"/html5/#/client/MzI3NzAAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 4,\n            \"ethernet\": 1,\n            \"uuid\": \"dffe3d49-db08-4181-a593-4559f0613006\"\n        },\n        \"3\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 3,\n            \"left\": 360,\n            \"icon\": \"SROS.png\",\n            \"image\": \"timos-SAS-s64\",\n            \"name\": \"VSR-I\",\n            \"ram\": 2048,\n            \"status\": 2,\n            \"template\": \"timos\",\n            \"type\": \"qemu\",\n            \"top\": 309,\n            \"url\": \"/html5/#/client/MzI3NzEAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 1,\n            \"ethernet\": 6,\n            \"uuid\": \"5cfc3a39-9952-46e8-aab4-03fe03c77728\"\n        },\n        \"4\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 4,\n            \"left\": 455,\n            \"icon\": \"SROS.png\",\n            \"image\": \"timoscpm-22.10.R2\",\n            \"name\": \"7750SR_CPM\",\n            \"ram\": 2048,\n            \"status\": 2,\n            \"template\": \"timoscpm\",\n            \"type\": \"qemu\",\n            \"top\": 413,\n            \"url\": \"/html5/#/client/MzI3NzIAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 2,\n            \"ethernet\": 2,\n            \"uuid\": \"25f0c99e-8142-4370-968e-6df3bf8ee11e\"\n        },\n        \"5\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 5,\n            \"left\": 815,\n            \"icon\": \"SROS.png\",\n            \"image\": \"timoscpm-22.10.R2\",\n            \"name\": \"7750SR_CPM\",\n            \"ram\": 2048,\n            \"status\": 2,\n            \"template\": \"timoscpm\",\n            \"type\": \"qemu\",\n            \"top\": 505,\n            \"url\": \"/html5/#/client/MzI3NzMAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 2,\n            \"ethernet\": 2,\n            \"uuid\": \"a4ed9c60-b02a-436e-befd-4af48cd56f89\"\n        },\n        \"6\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 6,\n            \"left\": 1080,\n            \"icon\": \"SROS.png\",\n            \"image\": \"timoscpm-21.10.R2\",\n            \"name\": \"7750SR_CPM\",\n            \"ram\": 2048,\n            \"status\": 2,\n            \"template\": \"timoscpm\",\n            \"type\": \"qemu\",\n            \"top\": 453,\n            \"url\": \"/html5/#/client/MzI3NzQAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 1,\n            \"ethernet\": 2,\n            \"uuid\": \"c49176ae-7a97-43ac-8276-013ae9941530\"\n        },\n        \"7\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 7,\n            \"left\": 679,\n            \"icon\": \"SROS.png\",\n            \"image\": \"timos-22.10.R1\",\n            \"name\": \"VSR-I\",\n            \"ram\": 2048,\n            \"status\": 2,\n            \"template\": \"timos\",\n            \"type\": \"qemu\",\n            \"top\": 206,\n            \"url\": \"/html5/#/client/MzI3NzUAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 1,\n            \"ethernet\": 6,\n            \"uuid\": \"e534c4f0-96aa-42ac-87f4-073b7728475b\"\n        },\n        \"8\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 8,\n            \"left\": 357,\n            \"icon\": \"SROS.png\",\n            \"image\": \"timos-SAS-s64\",\n            \"name\": \"VSR-I\",\n            \"ram\": 2048,\n            \"status\": 2,\n            \"template\": \"timos\",\n            \"type\": \"qemu\",\n            \"top\": 543,\n            \"url\": \"/html5/#/client/MzI3NzYAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 2,\n            \"ethernet\": 6,\n            \"uuid\": \"4c61b2f4-eca1-4bdf-9fa5-5294556ddedf\"\n        },\n        \"9\": {\n            \"console\": \"telnet\",\n            \"delay\": 0,\n            \"id\": 9,\n            \"left\": 563,\n            \"icon\": \"SROS.png\",\n            \"image\": \"timos-21.10.R2\",\n            \"name\": \"VSR-I\",\n            \"ram\": 4096,\n            \"status\": 2,\n            \"template\": \"timos\",\n            \"type\": \"qemu\",\n            \"top\": 541,\n            \"url\": \"/html5/#/client/MzI3NzcAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n            \"config_list\": [],\n            \"config\": 0,\n            \"cpu\": 2,\n            \"ethernet\": 6,\n            \"uuid\": \"0ddaba55-b476-45bb-928a-9fb38dfdb42e\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get A single node",
+					"id": "b0b6225c-9c55-4f6d-8baa-257baa6a3af5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2572bbdb-aa13-45a3-804b-e3b3f0442ad4",
+							"name": "Get A single node",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/6",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:52:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "823"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed node (60025).\",\n    \"data\": {\n        \"console\": \"telnet\",\n        \"config\": 0,\n        \"delay\": 0,\n        \"left\": 1080,\n        \"icon\": \"SROS.png\",\n        \"image\": \"timoscpm-21.10.R2\",\n        \"name\": \"7750SR_CPM\",\n        \"status\": 2,\n        \"template\": \"timoscpm\",\n        \"type\": \"qemu\",\n        \"top\": 453,\n        \"url\": \"/html5/#/client/MzI3NzQAYwBteXNxbA==?token=4959E145C4F2BF8C165A5EC1A6BBEB92E596B8E2B7581343CD8047132329A7EC\",\n        \"cpulimit\": 0,\n        \"cpu\": 1,\n        \"ethernet\": 2,\n        \"ram\": 2048,\n        \"uuid\": \"c49176ae-7a97-43ac-8276-013ae9941530\",\n        \"management_address\": \"192.168.3.47/24\",\n        \"timos_line\": \"slot=A chassis=SR-12 card=cpm5\",\n        \"timos_license\": \"ftp://license:license@192.168.3.9/timos.All-release.txt\",\n        \"qemu_options\": \"-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc\",\n        \"qemu_version\": \"2.12.0\",\n        \"qemu_arch\": \"x86_64\",\n        \"qemu_nic\": \"virtio-net-pci\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get configured interfaces from a node",
+					"id": "02aca58f-748f-4184-9a64-ddab791c2aa8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1/interfaces",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"1",
+								"interfaces"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5c7d2e98-fbc8-42ff-89f7-d621a69becd9",
+							"name": "Get configured interfaces from a node",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1/interfaces",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes",
+										"1",
+										"interfaces"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 00:08:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "421"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed node interfaces (60030).\",\n    \"data\": {\n        \"id\": 1,\n        \"sort\": \"qemu\",\n        \"ethernet\": [\n            {\n                \"name\": \"Mgmt0/0/CPU0/0\",\n                \"network_id\": 0\n            },\n            {\n                \"name\": \"Internal use\",\n                \"network_id\": 0\n            },\n            {\n                \"name\": \"Internal use\",\n                \"network_id\": 0\n            },\n            {\n                \"name\": \"Gi0/0/0/0\",\n                \"network_id\": 0\n            },\n            {\n                \"name\": \"Gi0/0/0/1\",\n                \"network_id\": 0\n            },\n            {\n                \"name\": \"Gi0/0/0/2\",\n                \"network_id\": 0\n            },\n            {\n                \"name\": \"Gi0/0/0/3\",\n                \"network_id\": 0\n            }\n        ],\n        \"serial\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get the lab topology",
+					"id": "e12f3664-3606-466f-94d7-873ad24c99f2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/topology",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"topology"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d1bd742d-0422-419a-ade8-a773acdbbaaf",
+							"name": "Get the lab topology",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/topology",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"topology"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:07:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1167"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"status\": \"success\",\n    \"message\": \"Topology loaded\",\n    \"data\": [\n        {\n            \"type\": \"ethernet\",\n            \"source\": \"node2\",\n            \"source_type\": \"node\",\n            \"source_label\": \"G0\",\n            \"destination\": \"network1\",\n            \"destination_type\": \"network\",\n            \"destination_label\": \"\"\n        },\n        {\n            \"type\": \"ethernet\",\n            \"source\": \"node3\",\n            \"source_type\": \"node\",\n            \"source_label\": \"Mgmt\",\n            \"destination\": \"network1\",\n            \"destination_type\": \"network\",\n            \"destination_label\": \"\"\n        },\n        {\n            \"type\": \"ethernet\",\n            \"source\": \"node4\",\n            \"source_type\": \"node\",\n            \"source_label\": \"Mgmt\",\n            \"destination\": \"network1\",\n            \"destination_type\": \"network\",\n            \"destination_label\": \"\"\n        },\n        {\n            \"type\": \"ethernet\",\n            \"source\": \"node5\",\n            \"source_type\": \"node\",\n            \"source_label\": \"Mgmt\",\n            \"destination\": \"network1\",\n            \"destination_type\": \"network\",\n            \"destination_label\": \"\"\n        },\n        {\n            \"type\": \"ethernet\",\n            \"source\": \"node6\",\n            \"source_type\": \"node\",\n            \"source_label\": \"Mgmt\",\n            \"destination\": \"network1\",\n            \"destination_type\": \"network\",\n            \"destination_label\": \"\"\n        },\n        {\n            \"type\": \"ethernet\",\n            \"source\": \"node7\",\n            \"source_type\": \"node\",\n            \"source_label\": \"Mgmt\",\n            \"destination\": \"network1\",\n            \"destination_type\": \"network\",\n            \"destination_label\": \"\"\n        },\n        {\n            \"type\": \"ethernet\",\n            \"source\": \"node9\",\n            \"source_type\": \"node\",\n            \"source_label\": \"Mgmt\",\n            \"destination\": \"network1\",\n            \"destination_type\": \"network\",\n            \"destination_label\": \"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all pictures",
+					"id": "7791ac98-418f-402e-a491-e7a63bc99ba5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/pictures",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"pictures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit an existing lab",
+					"id": "afec95f5-94ed-42bb-9082-39a294b1bf55",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Different Lab\",\"version\":\"2\",\"author\":\"AD\",\"description\":\"A different demo lab\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/labs/User1/Folder%202/New%20Lab.unl",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"User1",
+								"Folder%202",
+								"New%20Lab.unl"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "168648d3-051a-42a1-8ee8-443bff56eac7",
+							"name": "Edit an existing lab",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\":\"Different Lab\",\"version\":\"2\",\"author\":\"AD\",\"description\":\"A different demo lab\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/API lab test.unl",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"API lab test.unl"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:21:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Lab has been saved (60023).\"\n}"
+						}
+					]
+				}
+			],
+			"id": "a795472c-ef09-4dd6-88f6-f1827de25ca1"
+		},
+		{
+			"name": "New Lab",
+			"item": [
+				{
+					"name": "Create a new lab",
+					"id": "b8b34a56-28ca-4d5e-bdd7-93f9cd98c5b5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"path\":\"MHafez/SATS\",\"name\":\"API lab test\",\"version\":\"1\",\"author\":\"MHafez Lastname\",\"description\":\"A new demo lab\",\"body\":\"Lab usage and guide\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/labs",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "fa26af60-8b4f-40d2-85c5-bfb421fba903",
+							"name": "Create a new lab",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"path\":\"/MHafez/SATS\",\"name\":\"API lab test\",\"version\":\"1\",\"author\":\"MHafez Lastname\",\"description\":\"A new demo lab\",\"body\":\"Lab usage and guide\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/labs",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:17:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Lab has been created (60019).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add a new network to a lab",
+					"id": "d45c818e-6e81-487a-bc12-e8d5cf26c3a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"type\":\"bridge\",\"name\":\"Core Network\",\"left\":\"35%\",\"top\":\"25%\"}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/Different Lab.unl/networks",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"Different Lab.unl",
+								"networks"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "8bc88c61-c8e5-4186-9f58-19f61329393b",
+							"name": "Add a new network to a lab",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"type\":\"bridge\",\"name\":\"Core Network\",\"left\":\"35%\",\"top\":\"25%\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/Different Lab.unl/networks",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"Different Lab.unl",
+										"networks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:22:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "102"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Network has been added to the lab (60006).\",\n    \"data\": {\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"id": "d032ca8e-799d-4031-ba30-036fd9a2eb1b",
+							"name": "Add a new network to a lab",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"type\":\"pnet0\",\"name\":\"Core Network\",\"left\":\"35%\",\"top\":\"25%\"}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/Different Lab.unl/networks",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"Different Lab.unl",
+										"networks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:25:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "102"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Network has been added to the lab (60006).\",\n    \"data\": {\n        \"id\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add a new node to a lab",
+					"id": "a01cc729-96d7-4610-9926-4d5567903655",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"type\":\"qemu\",\r\n\"template\":\"timoscpm\",\r\n\"config\":\"Unconfigured\",\r\n\"delay\":0,\r\n\"icon\":\"SROS.png\",\r\n\"image\":\"timoscpm-21.10.R2\",\r\n\"name\":\"Core Router 1\",\r\n\"left\":\"35%\",\r\n\"top\":\"25%\",\r\n\"ram\":\"1024\",\r\n\"console\":\"telnet\",\r\n\"cpu\":1,\"ethernet\":2,\r\n\"uuid\":\"641a4800-1b19-427c-ae87-4a8ee90b7790\",\r\n\"management_address\": \"192.168.3.50/24\",\r\n\"timos_line\": \"slot=A chassis=SR-12 card=cpm5\"\r\n}"
+						},
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/Different Lab.unl/nodes",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"Different Lab.unl",
+								"nodes"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "71569e43-3780-4089-89fe-07390dd85411",
+							"name": "Add a new node to a lab",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"type\":\"qemu\",\r\n\"template\":\"timoscpm\",\r\n\"config\":\"Unconfigured\",\r\n\"delay\":0,\r\n\"icon\":\"SROS.png\",\r\n\"image\":\"timoscpm-21.10.R2\",\r\n\"name\":\"Core Router 1\",\r\n\"left\":\"35%\",\r\n\"top\":\"25%\",\r\n\"ram\":\"1024\",\r\n\"console\":\"telnet\",\r\n\"cpu\":1,\"ethernet\":2,\r\n\"uuid\":\"641a4800-1b19-427c-ae87-4a8ee90b7790\",\r\n\"management_address\": \"192.168.3.50/24\",\r\n\"timos_line\": \"slot=A chassis=SR-12 card=cpm5\"\r\n}"
+								},
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/Different Lab.unl/nodes",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"Different Lab.unl",
+										"nodes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:33:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Lab has been saved (60023).\",\n    \"data\": {\n        \"id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete an existent lab",
+					"id": "ec91fcf7-0c2c-4431-b773-33deed10d930",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/Different Lab.unl",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"Different Lab.unl"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e76965f9-d670-4e71-8063-fa2887545b72",
+							"name": "Delete an existent lab",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/Different Lab.unl",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"Different Lab.unl"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:34:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Lab has been deleted (60022).\"\n}"
+						}
+					]
+				}
+			],
+			"id": "7c9c7067-5afe-44ec-bc26-d5f7b7e11c75"
+		},
+		{
+			"name": "Start/ Stop",
+			"item": [
+				{
+					"name": "Start All Nodes in Lab",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b19adc3b-a540-44ac-9a43-1e9906f1150f",
+								"exec": [
+									"pm.test(\"200 OK : Node Started\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a4417400-b48e-4708-8d6b-47e9a5c56ed0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/start",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"start"
+							]
+						},
+						"description": "Does not appear possible to start/stop all nodes in EVE Pro 4.0. A programming loop is required to start/stop all nodes in a lab"
+					},
+					"response": [
+						{
+							"id": "eefb7caa-08e1-4ec1-91df-d92501312b69",
+							"name": "Start All Nodes in Lab",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/start",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes",
+										"start"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:05:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Nodes started (80048).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Stop All Nodes in Lab",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f3fae500-67cf-4578-b80c-36ee9a46ade7",
+								"exec": [
+									"pm.test(\"200 OK : Node Stopped\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "56d72aff-a258-4a12-8bd0-7b14764f77af",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/api/labs/{{path}}/nodes/3/stop",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"{{path}}",
+								"nodes",
+								"3",
+								"stop"
+							]
+						},
+						"description": "Does not appear possible to start/stop all nodes in EVE Pro 4.0. A programming loop is required to start/stop all nodes in a lab.\r\nparameter stopmode=3 is required"
+					},
+					"response": []
+				},
+				{
+					"name": "Start single node",
+					"id": "05f238a3-dd61-4108-a10e-0b5f7391facf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/3/start",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"3",
+								"start"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "03075bfa-a8b3-4940-b738-9b02110789a4",
+							"name": "Start one node",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/3/start",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes",
+										"3",
+										"start"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:55:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Node started (80049).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Stop single node",
+					"id": "c9e12339-8adb-47bc-b834-29fbb1d9d78e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1/stop",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"1",
+								"stop"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "fe20914b-a822-4e10-a4a3-99ee08063f8f",
+							"name": "Stop one node",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1/stop",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes",
+										"1",
+										"stop"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:57:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Node stopped (80051).\"\n}"
+						}
+					]
+				}
+			],
+			"id": "b588b403-4f30-4b36-a163-d5e23331484f"
+		},
+		{
+			"name": "Wipe",
+			"item": [
+				{
+					"name": "Wipe all nodes",
+					"id": "44189210-64fb-4543-a1dd-98f81df4c75c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/wipe",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"wipe"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "815f19a5-56af-4487-ad1b-1af687d93227",
+							"name": "Wipe all node",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/wipe",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes",
+										"wipe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:59:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Nodes cleared (80052).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Wipe single node",
+					"id": "141f19f9-fbc9-46ca-bf93-7ed6c42dd31b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1/wipe",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"1",
+								"wipe"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "97efacc3-aa80-4693-9e4a-470c90f605c9",
+							"name": "Wipe one node",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1/wipe",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"nodes",
+										"1",
+										"wipe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 23:00:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Node cleared (80053).\"\n}"
+						}
+					]
+				}
+			],
+			"id": "963908e6-d1a5-461b-be4b-e6741b311af4"
+		},
+		{
+			"name": "Export",
+			"item": [
+				{
+					"name": "Export all nodes configuration",
+					"id": "6156faea-b39b-46ee-8d46-38a94ea752b5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/export",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export single nodes configuration",
+					"id": "2d710dfb-727e-40df-9889-97c50eac703d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/nodes/1/export",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"nodes",
+								"1",
+								"export"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "872b05aa-2358-4424-b2c6-fd349e2cdc98"
+		},
+		{
+			"name": "Network",
+			"item": [
+				{
+					"name": "Get all networks configured in a lab",
+					"id": "f7e3e837-05db-409c-af09-0e13cbf6927f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/SATS/test.unl/networks",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"SATS",
+								"test.unl",
+								"networks"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "bdc2c378-229b-4210-a008-7bda10757a2a",
+							"name": "Get one or all networks configured in a lab",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/networks",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"networks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:44:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed networks (60004).\",\n    \"data\": {\n        \"1\": {\n            \"id\": 1,\n            \"count\": 7,\n            \"left\": 615,\n            \"name\": \"Net\",\n            \"top\": 354,\n            \"type\": \"pnet0\",\n            \"visibility\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a single network",
+					"id": "ce043170-f534-42b7-83d2-1eb69035a458",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/networks/1",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"labs",
+								"MHafez",
+								"DIl.unl",
+								"networks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "788e1aa4-ad4f-4a10-a1df-6f1c79099488",
+							"name": "Get a single network",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}/api/labs/MHafez/DIl.unl/networks/1",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"labs",
+										"MHafez",
+										"DIl.unl",
+										"networks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 26 Feb 2023 22:47:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Unified Networking Lab API"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Successfully listed network (60005).\",\n    \"data\": {\n        \"count\": 7,\n        \"left\": 615,\n        \"name\": \"Net\",\n        \"top\": 354,\n        \"type\": \"pnet0\",\n        \"visibility\": 1\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "e27ed17f-b92a-4d2a-b9d9-bdd8ba548dd3"
+		}
+	],
+	"variable": [
+		{
+			"id": "30c4dbe0-6d3d-4b4a-8530-d3f575a1f433",
+			"key": "username",
+			"value": "username"
+		}
+	]
+}
